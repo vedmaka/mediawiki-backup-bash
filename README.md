@@ -9,6 +9,8 @@ This is a set of bash scripts for regular backups of Mediawiki installations.
 
 Each script is bundled with help messages so give it a try to get more information about parameters.
 
+# Examples
+
 ```
 $ ./mediawiki_regular_install_backup.sh
 
@@ -59,4 +61,15 @@ $ ./s3upload.sh
       DIRECTORY   - absolute path to the directory
       BUCKET      - name of the bucket to upload files
 ====================================================================================
+```
+
+# Crontab examples
+
+Scripts could be combined together to build a backup cycle, for example the following crontab list will create daily backups into `~/backups/` folder, rotate it keeping only last 7 days backups and synchronize it to S3:
+
+```cron
+# Daily backups
+0 0 * * * sh ~/mediawiki_regular_install_backup.sh /var/www/mediawiki ~/backups > ~/backup.log
+0 3 * * * sh ~/rotate_backup.sh ~/backups 7 > ~/backup_rotate.log
+0 4 * * * sh ~/s3upload.sh ~/backups mybucket
 ```
