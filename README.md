@@ -9,8 +9,8 @@ This is a set of bash scripts for regular backups of Mediawiki installations.
 
 Each script is bundled with help messages so give it a try to get more information about parameters.
 
-```bash
-./mediawiki_regular_install_backup.sh
+```
+$ ./mediawiki_regular_install_backup.sh
 
 ====================================================================================
  MWBACKUP is a bash script that helps you to create and rotate backups of Mediawiki site.
@@ -25,8 +25,9 @@ Each script is bundled with help messages so give it a try to get more informati
 ====================================================================================
 ```
 
-```bash
-./create_backup.sh 
+```
+$ ./create_backup.sh 
+
  The script backups wiki files and database. It is intended to work with MinimalistFarm enabled wikis only.
  Example usage:
   ./create_backup.sh  FARM_ROOT  EXT_PATH  BACKUP_FOLDER  TIME_TAG
@@ -36,8 +37,9 @@ Each script is bundled with help messages so give it a try to get more informati
       TIME_TAG        - mandatory frequency tag for a backup [daily|weekly|monthly]
 ```
 
-```bash
-./rotate_backup.sh
+```
+$ ./rotate_backup.sh
+
  The script rotates backups by deleting sub-folders of the specified folder.
  It uses output of ls command so it implies that sub-folders are named in yyyy-mm-dd format or similar.
  Example usage:
@@ -46,8 +48,8 @@ Each script is bundled with help messages so give it a try to get more informati
       KEEP_NUMBER     - number of recent backups to keep
 ```
 
-```bash
-./s3upload.sh 
+```
+$ ./s3upload.sh 
 
 ====================================================================================
  The script syncronizes specified directory contents to S3 bucket.
