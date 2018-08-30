@@ -34,18 +34,6 @@ $ ./mediawiki_regular_install_backup.sh
 ```
 
 ```
-$ ./create_backup.sh 
-
- The script backups wiki files and database. It is intended to work with MinimalistFarm enabled wikis only.
- Example usage:
-  ./create_backup.sh  FARM_ROOT  EXT_PATH  BACKUP_FOLDER  TIME_TAG
-      FARM_ROOT       - absolute path to farm wiki directory
-      EXT_PATH        - relative (to farm root) path to directory of MinimalistFarm extension
-      BACKUP_FOLDER   - path to store backups
-      TIME_TAG        - mandatory frequency tag for a backup [daily|weekly|monthly]
-```
-
-```
 $ ./rotate_backup.sh
 
  The script rotates backups by deleting sub-folders of the specified folder.
@@ -67,6 +55,18 @@ $ ./s3upload.sh
       DIRECTORY   - absolute path to the directory
       BUCKET      - name of the bucket to upload files
 ====================================================================================
+```
+
+```
+$ ./create_backup.sh 
+
+ The script backups wiki files and database. It is intended to work with MinimalistFarm enabled wikis only.
+ Example usage:
+  ./create_backup.sh  FARM_ROOT  EXT_PATH  BACKUP_FOLDER  TIME_TAG
+      FARM_ROOT       - absolute path to farm wiki directory
+      EXT_PATH        - relative (to farm root) path to directory of MinimalistFarm extension
+      BACKUP_FOLDER   - path to store backups
+      TIME_TAG        - mandatory frequency tag for a backup [daily|weekly|monthly]
 ```
 
 # Crontab examples
