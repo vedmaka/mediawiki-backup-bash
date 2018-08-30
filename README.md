@@ -9,6 +9,12 @@ This is a set of bash scripts for regular backups of Mediawiki installations.
 
 Each script is bundled with help messages so give it a try to get more information about parameters.
 
+# Requirements
+
+* Linux with bash
+* Mediawiki installation to backup
+* [s3cmd](https://s3tools.org/s3cmd) (optionally, only for `s3upload.sh`)
+
 # Examples
 
 ```
